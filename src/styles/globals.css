@@ -1,0 +1,71 @@
+/* =====================================
+   🌈 Global Styles for Calendar Component
+   ===================================== */
+
+/* Tailwind layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 1️⃣ Base Reset */
+html,
+body {
+  @apply bg-neutral-50 text-neutral-900 font-sans antialiased;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* 2️⃣ Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: theme("colors.neutral.300");
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: theme("colors.neutral.400");
+}
+
+/* 3️⃣ Focus Styles */
+:focus-visible {
+  outline: 2px solid theme("colors.primary.500");
+  outline-offset: 2px;
+}
+
+/* 4️⃣ Modal Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* 5️⃣ Smooth Transitions */
+* {
+  @apply transition-colors duration-150;
+}
+
+/* 6️⃣ Buttons & Inputs Defaults */
+button,
+input,
+textarea,
+select {
+  @apply focus:outline-none ring-0;
+}
+
+/* 7️⃣ Calendar Grid Defaults */
+.calendar-grid {
+  @apply grid grid-cols-7 border border-neutral-200 rounded-lg overflow-hidden;
+}
+.calendar-cell {
+  @apply border border-neutral-200 p-2 h-32 hover:bg-neutral-50 transition-colors cursor-pointer;
+}
